@@ -10,6 +10,6 @@ public class Rotator : MonoBehaviour
 
     private void Start()
     {
-        transform.DORotate(_direction, _duration).SetLoops(_repeatsCount, _loopType);
+        transform.DORotate(_direction, _duration).SetLoops(_repeatsCount, _loopType).SetEase(Ease.Linear);
     }
 }

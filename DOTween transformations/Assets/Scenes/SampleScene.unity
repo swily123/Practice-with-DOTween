@@ -852,6 +852,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 945853521}
   _durationAnEffect: 2
+  _repeatsCount: -1
+  _loopType: 0
   _replacementText: Hello
   _addendumText: ' World'
   _enumerationText: Welcome
@@ -1100,7 +1102,7 @@ MonoBehaviour:
   _material: {fileID: 2100000, guid: 35344b63e02cc2f4494a0b339ab8df1d, type: 2}
   _color: {r: 0.7561311, g: 0.33708617, b: 0.9528302, a: 1}
   _duration: 3
-  _repeatsCount: 1
+  _repeatsCount: -1
   _loopType: 1
 --- !u!1 &2011650773
 GameObject:

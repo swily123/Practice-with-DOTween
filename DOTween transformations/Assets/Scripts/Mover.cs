@@ -10,6 +10,6 @@ public class Mover : MonoBehaviour
     
     private void Start()
     {
-        transform.DOMove(_direction, _duration).SetLoops(_repeatsCount, _loopType);
+        transform.DOMove(_direction, _duration).SetLoops(_repeatsCount, _loopType).SetEase(Ease.Linear);
     }
 }

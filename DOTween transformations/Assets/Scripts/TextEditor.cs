@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +6,8 @@ public class TextEditor : MonoBehaviour
 {
     [SerializeField] private Text _text;
     [SerializeField] private float _durationAnEffect;
+    [SerializeField] private int _repeatsCount;
+    [SerializeField] private LoopType _loopType;
 
     [Header("Text fields")]
     [SerializeField] private string _replacementText;
@@ -15,15 +16,11 @@ public class TextEditor : MonoBehaviour
     
     private void Start()
     {
-        List<Tween> tweens = new List<Tween>()
-        {
-            _text.DOText(_replacementText, _durationAnEffect), _text.DOText(_addendumText, _durationAnEffect).SetRelative(),
-            _text.DOText(_enumerationText, _durationAnEffect, true, ScrambleMode.All)
-        };
-
-        for (int i = 0; i < tweens.Count; i++)
-        {
-            tweens[i].SetDelay(_durationAnEffect * i);
-        }
+        Sequence sequence = DOTween.Sequence();
+        
+        sequence.Append(_text.DOText(_replacementText, _durationAnEffect));
+        sequence.Append(_text.DOText(_addendumText, _durationAnEffect).SetRelative());
+        sequence.Append(_text.DOText(_enumerationText, _durationAnEffect, true, ScrambleMode.All));
+        sequence.SetLoops(_repeatsCount, _loopType);
     }
 }

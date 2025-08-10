@@ -10,6 +10,6 @@ public class Sizer : MonoBehaviour
 
     private void Start()
     {
-        transform.DOScale(_direction, _duration).SetLoops(_repeatsCount, _loopType);
+        transform.DOScale(_direction, _duration).SetLoops(_repeatsCount, _loopType).SetEase(Ease.Linear);
     }
 }
